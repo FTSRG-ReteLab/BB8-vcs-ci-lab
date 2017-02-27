@@ -14,6 +14,9 @@ public class TrainUserImpl implements TrainUser {
 
 	@Override
 	public boolean getAlarmFlag() {
+		if(joystickPosition > 15){
+			return true;
+		}
 		return false;
 	}
 
@@ -25,7 +28,11 @@ public class TrainUserImpl implements TrainUser {
 	@Override
 	public void overrideJoystickPosition(int joystickPosition) {
 		this.joystickPosition = joystickPosition;
-		controller.setJoystickPosition(joystickPosition);
+		if(getAlarmFlag()){
+			controller.setJoystickPosition(-20);
+		}else {
+			controller.setJoystickPosition(joystickPosition);
+		}
 	}
 
 }
