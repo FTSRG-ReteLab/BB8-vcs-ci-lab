@@ -6,7 +6,9 @@ __Numbered list:__
   `1. apples`
   `2. oranges`
   `3. pears`
-  `4. almond`
+  `4. banana`
+  `5. almond`
+
 
 
  **Finished**
